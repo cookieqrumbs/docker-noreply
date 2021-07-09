@@ -1,0 +1,17 @@
+sudo: required
+
+dist: trusty
+
+language: node_js
+
+env:
+  - PROJECT=docker-noreply
+  - TAG=1.0
+
+stage: build image
+script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t $PROJECT .
+  - docker tag project-backend $DOCKER_ORGANIZATION/$PROJECT:$TAG
+  - docker push $DOCKER_ORGANIZATION/$PROJECT:$TAG
+  - docker run --rm --entrypoint "/bin/bash" $DOCKER_ORGANIZATION/$PROJECT:$TAG -c "if [ -e /home/node/app/package.json ]; then (exit 0); else (exit 1); fi"
