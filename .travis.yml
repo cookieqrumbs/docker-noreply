@@ -5,8 +5,7 @@ dist: trusty
 language: node_js
 
 env:
-  - PROJECT=docker-noreply
-  - TAG=1.0
+  - PROJECT=docker-noreply TAG=1.0
 
 stage: build image
 script:
