@@ -7,15 +7,19 @@ A container which accepts HTTP POST requests and send outgoing emails via a **se
 
 ## POST request
 
-| Format | Data parts | Description |
-| ------ | ---------- | ----------- |
-| multipart/form-data | JSON | <pre>{
-    **from**: {Mail from},
-    **to**: {Mail to},
-    **subject**: {Mail subject},
-    **html**: {Mail contents in HTML},
-    **text**: {Mail contents in plain text}
-}</pre>
-| | Files | Mail attachments |
+- **Type**: multipart/form-data
 
-*Todo: Implement basic authentication protection*
+- **Form data part**:
+    ```json
+    {
+        from: <Mail from>,
+        to: <Mail to>,
+        subject: <Mail subject>,
+        html: <Mail contents in HTML>,
+        text: <Mail contents in plain text>
+    }
+    ```
+- **File parts**: Mail attachments
+
+## Todo
+*Implement basic authentication protection*
