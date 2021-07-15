@@ -3,18 +3,19 @@
 
 A container which accepts HTTP POST requests and send outgoing emails via a **sendmail** daemon.
 
-<span style="color:red;font-weight: bold">This container must be used behind a private network and must not be accepting HTTP requests from public network!</span>
+**This container must be used behind a private network and must not be accepting HTTP requests from public network!**
 
 ## POST request
 
-| Format |  Data parts | Description |
-| multipart/form-data | JSON | {
+| Format | Data parts | Description |
+| ------ | ---------- | ----------- |
+| multipart/form-data | JSON | <pre>{
     **from**: {Mail from},
     **to**: {Mail to},
     **subject**: {Mail subject},
     **html**: {Mail contents in HTML},
     **text**: {Mail contents in plain text}
-}
+}</pre>
 | | Files | Mail attachments |
 
 *Todo: Implement basic authentication protection*
