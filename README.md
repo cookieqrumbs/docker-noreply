@@ -12,11 +12,11 @@ A container which accepts HTTP POST requests and send outgoing emails via a **se
 - **Form data part**:
     ```json
     {
-        "from": /*Mail from*/,
-        "to": /*Mail to*/,
-        "subject": /*Mail subject*/,
-        "html": /*Mail contents in HTML*/,
-        "text": /*Mail contents in plain text*/
+        "from": "Mail from",
+        "to": "Mail to",
+        "subject": "Mail subject",
+        "html": "Mail contents in HTML",
+        "text": "Mail contents in plain text"
     }
     ```
 - **File parts**: Mail attachments
